@@ -101,7 +101,7 @@ INSERT into menus (rest_id, rest_name, menu_type_num, menu_type_name, menu_secti
 INSERT into menus (rest_id, rest_name, menu_type_num, menu_type_name, menu_section_num, menu_section_name, menu_section_description, menu_item_name, menu_item_description, menu_item_price) VALUES (1,"Delia's Chicken Sausage", 2, "Dinner", 0, "Appetizer", null, "Bread", null, "$99.42");
 
 INSERT into menus (rest_id, rest_name, menu_type_num, menu_type_name, menu_section_num, menu_section_name, menu_section_description, menu_item_name, menu_item_description, menu_item_price) VALUES (1,"Delia's Chicken Sausage", 2, "Dinner", 0, "Appetizer", null, "Butter", null, "$99.42");
-
+The Red
 INSERT into menus (rest_id, rest_name, menu_type_num, menu_type_name, menu_section_num, menu_section_name, menu_section_description, menu_item_name, menu_item_description, menu_item_price) VALUES (1,"Delia's Chicken Sausage", 2, "Dinner", 0, "Appetizer", null, "Bread", null, "$99.42");
 
 INSERT into menus (rest_id, rest_name, menu_type_num, menu_type_name, menu_section_num, menu_section_name, menu_section_description, menu_item_name, menu_item_description, menu_item_price) VALUES (1,"Delia's Chicken Sausage", 2, "Dinner", 1, "Mains", null, "Eggs and Bacon", null, "$99.42");

@@ -1,0 +1,1 @@
+mongoimport -d menu_db -c menu_items --type csv --file /Users/Jon/HRLA/sris-menu-photos/data.csv --headerline;

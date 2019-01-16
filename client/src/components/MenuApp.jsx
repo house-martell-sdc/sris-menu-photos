@@ -9,7 +9,7 @@ class MenuApp extends React.Component {
     this.state = {
       menu_data: ['hello'],
       menu_types: {},
-      rest_id: 3,
+      rest_id: Math.floor(Math.random() * Math.foor(1000000)),
       menu_state: 0,
       filtered_menu_data: ["filtered"],
       viewmore: true,
