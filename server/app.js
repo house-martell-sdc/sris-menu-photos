@@ -5,7 +5,7 @@ const axios = require("axios")
 const db = require('../database/index.js');
 const cors = require('cors');
 
-
+const {getAllItems} = require('./controller.js');
 // const router = require('./router.js');
 
 const app = express();
@@ -19,9 +19,11 @@ app.use(express.static(__dirname + '/../client/dist'));
 
 // app.use('/', router);
 
-app.get('/api/menus/:rest_id', (req, res) => {
-    db.getAllMenuItems(req.params["rest_id"], (data) => res.status(200).send(data.rows));
-});
+// app.get('/api/menus/:rest_id', (req, res) => {
+//     db.getAllMenuItems(req.params["rest_id"], (data) => res.status(200).send(data.rows));
+// });
+
+app.get('/api/menus/:rest_id', getAllItems);
 
 app.get('/api/photos/:rest_id', (req, res) => {
     db.getAllPhotos(req.params["rest_id"], (data) => res.status(200).send(data));
