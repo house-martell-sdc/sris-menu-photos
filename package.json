@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest test/test.js",
     "start": "nodemon server/index.js",
+    "start_cluster": "nodemon server/cluster.js",
     "build": "webpack -d --watch",
     "seed": "mysql -u root < schema.sql"
   },
@@ -32,12 +33,14 @@
     "csv-write-stream": "^2.0.0",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
+    "express-promise-router": "^3.0.3",
     "faker": "^4.1.0",
     "fs": "0.0.1-security",
     "i": "^0.3.6",
     "morgan": "^1.9.1",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.4",
+    "newrelic": "^5.0.0",
     "nodemon": "^1.18.9",
     "npm": "^6.5.0",
     "pg": "^7.8.0",

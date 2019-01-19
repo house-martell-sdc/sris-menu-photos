@@ -39,14 +39,14 @@ class App extends React.Component {
     
     renderView() {
         if (this.state.close === false) {
-            document.getElementById("containerContentid").style.zIndex = "25"
+            //document.getElementById("containerContentid").style.zIndex = "25"
              
             return <View  
             photoID = {this.state.currentPhoto} 
             restID = {this.state.rest_id}
             handleEscape ={this.handleEscape}/>
         } else {
-            document.getElementById("containerContentid").style.zIndex = "1"
+            //document.getElementById("containerContentid").style.zIndex = "1"
             return (
                 
                 <div className = {styles.appcontainer}>    

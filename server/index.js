@@ -1,53 +1,30 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const axios = require("axios")
-const db = require('../database/index.js');
-const cors = require('cors');
+const http = require('http');
+const {pid} = process;
+const port = 9003;
+const app = require('./app');
+
+http.createServer(app).listen(port, () => {
+    console.log(`Started process ${pid} on port ${port}`);
+ });
 
 
-const app = express();
-const PORT = 9003;
 
-app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(express.static(__dirname + '/../client/dist'));
+// const express = require('express');
+// const parser = require('body-parser');
+// const path = require('path');
 
-app.get('/api/menus/:rest_id', (req, res) => {
-    db.getAllMenuItems(req.params["rest_id"], (data) => res.status(200).send(data.rows));
-});
+// const app = express();
 
-app.get('/api/photos/:rest_id', (req, res) => {
-    db.getAllPhotos(req.params["rest_id"], (data) => res.status(200).send(data));
-});
+// const router = require('./router.js');
 
-app.post('/api/menus', (req, res) => {
-  const { 
-    id,
-    rest_id,
-    rest_name,
-    menu_type_num,
-    menu_type_name,
-    menu_section_num,
-    menu_section_name,
-    menu_section_description,
-    menu_item_name,
-    menu_item_description,
-    menu_item_price } = req.body;
-    console.log('body', req.body);
-    db.addMenuItem(id, rest_id, rest_name, menu_type_num, menu_type_name, menu_section_num, menu_section_name, menu_section_description, menu_item_name, menu_item_description, menu_item_price, () => res.status(201).send('added'));
-});
+// app.use(parser.json());
+// app.use(parser.urlencoded({extended: true}));
 
-app.delete('/api/menus', (req, res) => {
-  const {rest_id, menu_item_name} = req.body;
-  db.deleteMenuItem(rest_id, menu_item_name, () => res.status(204).send('deleted'));
-});
+// app.use(express.static(path.join(__dirname + '/../client/dist')))
 
-app.listen(PORT, () => {
-    console.log(`listening on port ${PORT}`);
-});
 
-module.exports = {
-    app
-};
+
+// const PORT = 3000;
+
+// app.listen(PORT, () => console.log(`listening on port ${PORT} for yER boy`));

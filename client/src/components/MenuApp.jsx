@@ -9,7 +9,7 @@ class MenuApp extends React.Component {
     this.state = {
       menu_data: ['hello'],
       menu_types: {},
-      rest_id: Math.floor(Math.random() * Math.foor(1000000)),
+      rest_id: Math.floor(Math.random() * Math.floor(1000000)),
       menu_state: 0,
       filtered_menu_data: ["filtered"],
       viewmore: true,
@@ -32,8 +32,8 @@ class MenuApp extends React.Component {
   findUniqueMenuTypes() {
     axios
       // .get(`http://127.0.0.1:9003/api/menus/${this.state.rest_id}`)
-      // .get(`/api/menus/${this.state.rest_id}`)
-      .get(`http://54.219.151.33:9003/api/menus/${this.state.rest_id}`)                    
+      .get(`http://localhost:9003/api/menus/${this.state.rest_id}`)
+      //.get(`http://54.219.151.33:9003/api/menus/${this.state.rest_id}`)                    
       .then(({ data }) => this.retrieveUniqueMenuTypes(data))
       .then((data) => this.setState({menu_types: data}));
   }
@@ -41,8 +41,8 @@ class MenuApp extends React.Component {
   filterDatabyMenuType() {
     axios
     // .get(`http://127.0.0.1:9003/api/menus/${this.state.rest_id}`)  
-    // .get(`/api/menus/${this.state.rest_id}`)
-    .get(`http://54.219.151.33:9003/api/menus/${this.state.rest_id}`)        
+     .get(`http://localhost:9003/api/menus/${this.state.rest_id}`)
+    //.get(`http://54.219.151.33:9003/api/menus/${this.state.rest_id}`)        
         
     .then(({ data }) => data.filter(obj => obj.menu_type_num === this.state.menu_state))
     .then((data)=> this.setState({filtered_menu_data: data}))
@@ -52,8 +52,8 @@ class MenuApp extends React.Component {
   getMenus(rest_id) {
     axios
       // .get(`http://127.0.0.1:9003/api/menus/${rest_id}`)
-      // .get(`/api/menus/${rest_id}`)
-      .get(`http://54.219.151.33:9003/api/menus/${rest_id}`)          
+       .get(`http://localhost:9003/api/menus/${rest_id}`)
+      //.get(`http://54.219.151.33:9003/api/menus/${rest_id}`)          
       .then(({ data }) => this.setState({menu_data: data}));
   }; 
 

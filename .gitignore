@@ -64,3 +64,5 @@ typings/
 # csv files
 data.csv
 tester.csv
+hello.yml
+newrelic.js

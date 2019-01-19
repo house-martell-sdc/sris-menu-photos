@@ -43,7 +43,7 @@ handleRightClick(e) {
   render() {
     return (
       <div> 
-        <div className ={styles.view}>
+        <div className = {styles.view}>
         <div className = {styles.fullscreenimage}>
           <div className  = {styles.photogallery}>
           <button className={styles.escape}onClick={e => this.props.handleEscape(e)}><img src="https://s3-us-west-1.amazonaws.com/table-it/close_x.png"></img> </button>
