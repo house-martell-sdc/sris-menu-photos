@@ -65,6 +65,10 @@ typings/
 data.csv
 tester.csv
 hello.yml
-newrelic.js
-Dockerfile
-loaderio-d36c30d7b8fcae7837c715f1e713c751.txt
+dbHelpers.js
+model.js
+/database/index.js
+
+
+
+

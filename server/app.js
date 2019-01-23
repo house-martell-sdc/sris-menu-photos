@@ -2,7 +2,7 @@ require('newrelic');
 const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require("axios")
-const db = require('../database/index.js');
+// const db = require('../database/index.js');
 const cors = require('cors');
 
 const {getAllItems} = require('./controller.js');
@@ -25,31 +25,31 @@ app.use(express.static(__dirname + '/../client/dist'));
 
 app.get('/api/menus/:rest_id', getAllItems);
 
-app.get('/api/photos/:rest_id', (req, res) => {
-    db.getAllPhotos(req.params["rest_id"], (data) => res.status(200).send(data));
-});
+// app.get('/api/photos/:rest_id', (req, res) => {
+//     db.getAllPhotos(req.params["rest_id"], (data) => res.status(200).send(data));
+// });
 
-app.post('/api/menus', (req, res) => {
-  const { 
-    id,
-    rest_id,
-    rest_name,
-    menu_type_num,
-    menu_type_name,
-    menu_section_num,
-    menu_section_name,
-    menu_section_description,
-    menu_item_name,
-    menu_item_description,
-    menu_item_price } = req.body;
-    console.log('body', req.body);
-    db.addMenuItem(id, rest_id, rest_name, menu_type_num, menu_type_name, menu_section_num, menu_section_name, menu_section_description, menu_item_name, menu_item_description, menu_item_price, () => res.status(201).send('added'));
-});
+// app.post('/api/menus', (req, res) => {
+//   const { 
+//     id,
+//     rest_id,
+//     rest_name,
+//     menu_type_num,
+//     menu_type_name,
+//     menu_section_num,
+//     menu_section_name,
+//     menu_section_description,
+//     menu_item_name,
+//     menu_item_description,
+//     menu_item_price } = req.body;
+//     console.log('body', req.body);
+//     db.addMenuItem(id, rest_id, rest_name, menu_type_num, menu_type_name, menu_section_num, menu_section_name, menu_section_description, menu_item_name, menu_item_description, menu_item_price, () => res.status(201).send('added'));
+// });
 
-app.delete('/api/menus', (req, res) => {
-  const {rest_id, menu_item_name} = req.body;
-  db.deleteMenuItem(rest_id, menu_item_name, () => res.status(204).send('deleted'));
-});
+// app.delete('/api/menus', (req, res) => {
+//   const {rest_id, menu_item_name} = req.body;
+//   db.deleteMenuItem(rest_id, menu_item_name, () => res.status(204).send('deleted'));
+// });
 
 // app.listen(PORT, () => {
 //     console.log(`listening on port ${PORT}`);

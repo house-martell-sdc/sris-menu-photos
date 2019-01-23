@@ -1,3 +1,5 @@
+//for use with sequelize
+
 const Item = require('./model.js');
 
 const getAllItemsHelper = (rest_id, callback) => {

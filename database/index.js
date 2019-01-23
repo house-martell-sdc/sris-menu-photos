@@ -13,7 +13,7 @@ const pool = new Pool({
 
 // pool.connect().then(console.log('connected to postgres'))
 
-const connection = pool.connect();  
+// const connection = pool.connect();  
 
 const getAllMenuItems = function (rest_id, callback) {
   pool.connect().then(client => {
