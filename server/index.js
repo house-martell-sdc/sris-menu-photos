@@ -1,11 +1,11 @@
-const http = require('http');
-const {pid} = process;
-const port = 9003;
-const app = require('./app');
+// const http = require('http');
+// const {pid} = process;
+// const port = 9003;
+// const app = require('./app');
 
-http.createServer(app).listen(port, () => {
-    console.log(`Started process ${pid} on port ${port}`);
- });
+// http.createServer(app).listen(port, () => {
+//     console.log(`Started process ${pid} on port ${port}`);
+//  });
 
 
 
