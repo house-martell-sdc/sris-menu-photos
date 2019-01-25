@@ -8,7 +8,8 @@
     "start": "nodemon server/index.js",
     "start_cluster": "nodemon server/cluster.js",
     "build": "webpack -d --watch",
-    "seed": "mysql -u root < schema.sql"
+    "seed": "mysql -u root < schema.sql",
+    "start_proxy": "nodemon proxy/server/index.js"
   },
   "repository": {
     "type": "git",
